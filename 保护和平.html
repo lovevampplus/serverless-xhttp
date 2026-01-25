@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保护和平，反对战争 | Protect Peace, Oppose War</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(rgba(0, 40, 85, 0.85), rgba(0, 20, 40, 0.9)), 
+                        url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .peace-icon {
+            font-size: 80px;
+            color: #FFD700;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+        }
+        
+        .chinese-title {
+            color: #FFD700;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .english-title {
+            font-size: 36px;
+            color: #87CEEB;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        
+        .content-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .image-container {
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+        }
+        
+        .image-frame {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transition: transform 0.5s;
+            border: 5px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .image-frame:hover {
+            transform: scale(1.03);
+        }
+        
+        .image-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .text-container {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            text-align: left;
+        }
+        
+        .message-box {
+            background-color: rgba(0, 40, 85, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #FFD700;
+        }
+        
+        h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #FFD700;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+        }
+        
+        .chinese-text {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .english-text {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #E0F7FF;
+            font-style: italic;
+        }
+        
+        .quote {
+            font-size: 24px;
+            font-weight: 600;
+            color: #FFD700;
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .peace-symbols {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .symbol {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 120px;
+        }
+        
+        .symbol i {
+            font-size: 40px;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+        
+        .symbol span {
+            font-size: 16px;
+            color: #87CEEB;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 16px;
+            color: #87CEEB;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            .english-title {
+                font-size: 28px;
+            }
+            
+            .chinese-text {
+                font-size: 18px;
+            }
+            
+            .english-text {
+                font-size: 16px;
+            }
+            
+            .peace-icon {
+                font-size: 60px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .english-title {
+                font-size: 22px;
+            }
+            
+            .peace-icon {
+                font-size: 50px;
+            }
+            
+            .message-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="peace-icon">
+                <i class="fas fa-dove"></i>
+            </div>
+            <h1 class="chinese-title">保护和平，反对战争</h1>
+            <h2 class="english-title">Protect Peace, Oppose War</h2>
+        </div>
+        
+        <div class="content-row">
+            <div class="image-container">
+                <div class="image-frame">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="和平鸽">
+                </div>
+                <div class="image-frame" style="margin-top: 25px;">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="希望的小女孩">
+                </div>
+            </div>
+            
+            <div class="text-container">
+                <div class="message-box">
+                    <h2><i class="fas fa-peace"></i> 和平的珍贵</h2>
+                    <p class="chinese-text">和平是人类最宝贵的财富，是社会发展与繁荣的基石。战争只会带来毁灭、痛苦和无数生命的消逝，而和平则孕育希望、创造与美好未来。</p>
+                    <p class="english-text">Peace is humanity's most precious treasure, the foundation for social development and prosperity. War only brings destruction, suffering, and the loss of countless lives, while peace nurtures hope, creation, and a better future.</p>
+                </div>
+                
+                <div class="message-box">
+                    <h2><i class="fas fa-hands-helping"></i> 我们的责任</h2>
+                    <p class="chinese-text">每个人都有责任维护和平，反对战争。通过对话、理解与合作，我们可以解决分歧，建立更加和谐的世界。</p>
+                    <p class="english-text">Everyone has the responsibility to maintain peace and oppose war. Through dialogue, understanding, and cooperation, we can resolve differences and build a more harmonious world.</p>
+                </div>
+                
+                <div class="message-box">
+                    <h2><i class="fas fa-heart"></i> 为了下一代</h2>
+                    <p class="chinese-text">让我们为孩子们创造一个没有战争恐惧的世界，让他们在和平、安全的环境中成长，追逐梦想，拥抱未来。</p>
+                    <p class="english-text">Let us create a world without the fear of war for our children, allowing them to grow up in a peaceful and secure environment, pursue their dreams, and embrace the future.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quote">
+            <p>"和平不是一个理想，而是一种必须。"</p>
+            <p style="font-size: 18px; margin-top: 5px;">"Peace is not an ideal, it is a necessity."</p>
+        </div>
+        
+        <div class="peace-symbols">
+            <div class="symbol">
+                <i class="fas fa-hand-peace"></i>
+                <span>和平手势</span>
+                <span>Peace Sign</span>
+            </div>
+            <div class="symbol">
+                <i class="fas fa-globe-americas"></i>
+                <span>全球和平</span>
+                <span>Global Peace</span>
+            </div>
+            <div class="symbol">
+                <i class="fas fa-heartbeat"></i>
+                <span>生命尊重</span>
+                <span>Respect Life</span>
+            </div>
+            <div class="symbol">
+                <i class="fas fa-users"></i>
+                <span>人类团结</span>
+                <span>Human Unity</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 和平倡议 | 让我们携手创造一个没有战争的世界</p>
+            <p>© 2023 Peace Initiative | Let's work together to create a world without war</p>
+        </div>
+    </div>
+
+    <script>
+        // 和平鸽动画增强
+        const dove = document.querySelector('.peace-icon');
+        dove.addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.2)';
+            this.style.transition = 'transform 0.3s';
+        });
+        
+        dove.addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+        });
+        
+        // 添加和平消息轮换
+        const messages = [
+            {chinese: "和平不是没有冲突，而是以和平方式解决冲突的能力。", english: "Peace is not the absence of conflict, but the ability to resolve conflict peacefully."},
+            {chinese: "战争摧毁生命，和平创造生命。", english: "War destroys lives, peace creates lives."},
+            {chinese: "每个孩子都有权在和平中成长。", english: "Every child has the right to grow up in peace."},
+            {chinese: "和平是通往繁荣的唯一道路。", english: "Peace is the only path to prosperity."}
+        ];
+        
+        let currentMessageIndex = 0;
+        const quoteElement = document.querySelector('.quote p');
+        const englishQuoteElement = document.querySelector('.quote p:nth-child(2)');
+        
+        function rotateMessage() {
+            currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+            quoteElement.textContent = `"${messages[currentMessageIndex].chinese}"`;
+            englishQuoteElement.textContent = `"${messages[currentMessageIndex].english}"`;
+            
+            // 添加淡入淡出效果
+            quoteElement.style.opacity = 0;
+            englishQuoteElement.style.opacity = 0;
+            
+            setTimeout(() => {
+                quoteElement.style.transition = 'opacity 0.5s';
+                englishQuoteElement.style.transition = 'opacity 0.5s';
+                quoteElement.style.opacity = 1;
+                englishQuoteElement.style.opacity = 1;
+            }, 10);
+        }
+        
+        // 每8秒更换一次消息
+        setInterval(rotateMessage, 8000);
+        
+        // 点击和平图标也可以更换消息
+        dove.addEventListener('click', rotateMessage);
+    </script>
+</body>
+</html>
